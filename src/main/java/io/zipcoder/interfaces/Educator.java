@@ -3,11 +3,11 @@ package io.zipcoder.interfaces;
 public enum Educator implements Teacher{
     DOLIO(1, "Dolio"), FROILAN(2, "Froilan"), CHRIS(3,"Chris"), ROBERTO(4, "Roberto");
 
-    final Instructor instructor;
-    double timeWorked = 0;
+    private final Instructor instructor;
+    private double timeWorked = 0;
 
     Educator(int i, String name){
-        instructor = new Instructor(i, "");
+        instructor = new Instructor(i, name);
     }
 
     @Override
@@ -20,5 +20,13 @@ public enum Educator implements Teacher{
     public void lecture(Learner[] learners, double numberOfHours) {
         instructor.lecture(learners, numberOfHours);
         timeWorked += numberOfHours;
+    }
+
+    public double getTimeWorked() {
+        return timeWorked;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
     }
 }

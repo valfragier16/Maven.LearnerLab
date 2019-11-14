@@ -3,12 +3,12 @@ package io.zipcoder.interfaces;
 public class Instructors extends People<Instructor> {
     private static final Instructors INSTANCE = new Instructors();
 
-    public Instructors() {
+    private Instructors() {
         super();
-        super.add(new Instructor(1, "Dolio"));
-        super.add(new Instructor(2, "Froilan"));
-        super.add(new Instructor(3, "Chris"));
-        super.add(new Instructor(4, "Roberto"));
+        super.add(Educator.DOLIO.getInstructor());
+        super.add(Educator.FROILAN.getInstructor());
+        super.add(Educator.CHRIS.getInstructor());
+        super.add(Educator.ROBERTO.getInstructor());
     }
 
     @Override

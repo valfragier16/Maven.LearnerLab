@@ -9,10 +9,8 @@ public class TestInstructors {
 
     @Test
     public void getINSTANCE(){
-        Instructors i = Instructors.getInstance();
-        Person p = i.findById(1);
-
-        Assert.assertTrue(i.findById(1).getName().equals("Dolio"));
+        String expected = Instructors.getInstance().findById(1).getName();
+        Assert.assertEquals(expected, "Dolio");
 
     }
 }
